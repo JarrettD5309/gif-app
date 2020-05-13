@@ -8,13 +8,16 @@ var apiKey = "SF7TXcXQN2SXAfb2w6nQGXK8QO6autqa";
 
 var queryURL = "http://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&limit=10" + "&q=";
 
-for (var i=0;i<topics.length;i++) {
-    var newButton = $("<button>");
-    newButton.text(topics[i]);
-    newButton.addClass("gif-button");
-    newButton.attr("data-name", topics[i]);
-    buttonDiv.append(newButton);
-}
+function addButtons() {
+    buttonDiv.empty();
+    for (var i=0;i<topics.length;i++) {
+        var newButton = $("<button>");
+        newButton.text(topics[i]);
+        newButton.addClass("gif-button");
+        newButton.attr("data-name", topics[i]);
+        buttonDiv.append(newButton);
+    }
+};
 
 $(document).on("click",".gif-button", function(){
     team = $(this).attr("data-name");
@@ -46,4 +49,14 @@ $(document).on("click",".gif", function() {
         $(this).attr("data-state", "still");
     }
 });
+
+$("#add-gif").on("click", function() {
+    event.preventDefault();
+    var newTopic = $("#gif-input").val().trim();
+    topics.push(newTopic);
+    $("#gif-input").val("");
+    addButtons();
+})
+
+addButtons();
 
