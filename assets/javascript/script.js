@@ -40,7 +40,7 @@ function addButtons() {
 };
 
 $(document).on("click",".gif-button", function(){
-    var queryURL = "http://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&limit=10&q=";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&limit=10&q=";
     team = $(this).attr("data-name");
     console.log(team);
     queryURL = queryURL + team;
