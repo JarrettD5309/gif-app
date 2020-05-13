@@ -3,28 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/reset.css">
+    <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <title>Gif App</title>
+    <title>Baseball Gifs</title>
 
     
 </head>
 <body>
-    <h1>Gif App</h1>
-    
-    <div id="button-div"></div>
+    <div class="container text-center">
+        <div class="row">
+            <div class="outside-border col-12">
+                <div class="row">
+                    <div class="head col-12">
+                        <h1>Baseball Gifs</h1>
+                    </div>
+                </div>
+                
+                <div class="row" id="button-div"></div>
+            </div>
+        </div>
 
-    <form id="gif-form">
-        <label for="gif-input">Add a team!</label><br>
-        <input type="text" id="gif-input">
-        <input id="add-gif" type="submit" value="Submit">
-    </form>
+        <form id="gif-form">
+            <label for="gif-input">Add a team!</label><br>
+            <input type="text" id="gif-input">
+            <input id="add-gif" type="submit" value="Submit">
+        </form>
+        
 
-    <div id="image-div"></div>
-    <!-- Added link to the jQuery Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/javascript/script.js"></script>
+        <div id="image-div"></div>
+        <!-- Added link to the jQuery Library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="assets/javascript/script.js"></script>
+    </div>
 </body>
 </html>
