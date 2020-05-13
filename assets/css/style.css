@@ -19,10 +19,10 @@
 
 .gif-button {
     background-color: white;
-    border: 1px solid black;
+    border: 2px solid black;
     border-top: 0;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     transition-duration: 0.2s;
 }
 
@@ -36,7 +36,10 @@
 }
 
 .head {
-    border: 1px solid black;
+    border: 2px solid black;
+    margin-top: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .indiv-img-div {
@@ -52,12 +55,16 @@
     cursor: pointer;
 }
 
+#gif-form {
+    margin-top: 10px;
+}
+
 #gif-input {
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 #add-gif {
-    border: 1px solid black;
+    border: 2px solid black;
     background-color: white;
     transition-duration: 0.2s;
 }
@@ -65,12 +72,14 @@
 #add-gif:hover {
     background-color: lightslategray;
     color: white;
-    border: 1px solid lightslategray;
+    border: 2px solid black;
 }
 
 #image-div {
     margin-top: 15px;
 }
+
+
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
