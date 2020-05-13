@@ -6,7 +6,7 @@ var team = "";
 
 var apiKey = "SF7TXcXQN2SXAfb2w6nQGXK8QO6autqa";
 
-var queryURL = "http://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + team + "&limit=10";
+var queryURL = "http://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&limit=10" + "&q=";
 
 for (var i=0;i<topics.length;i++) {
     var newButton = $("<button>");
@@ -19,15 +19,31 @@ for (var i=0;i<topics.length;i++) {
 $(document).on("click",".gif-button", function(){
     team = $(this).attr("data-name");
     console.log(team);
-    queryURL = "http://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + team + "&limit=10";
+    queryURL = queryURL + team;
     $.ajax(
         {url: queryURL,
         method: "GET"}
         ).then(function(response) {
             for (var i=0;i<11;i++) {
-                console.log(queryURL);
-                imageDiv.append($("<img>").attr("src", response.data[i].images.fixed_height_still.url));
+                var individualImageDiv = $("<div>");
+                individualImageDiv.addClass("indiv-img-div");
+
+                individualImageDiv.append($("<img>").attr("src", response.data[i].images.fixed_height_still.url).attr("data-still",response.data[i].images.fixed_height_still.url).attr("data-animate",response.data[i].images.fixed_height.url).attr("data-state", "still").addClass("gif"));
+
+                individualImageDiv.append($("<p>").text("Rating: " +response.data[i].rating).addClass("rating"));
+                imageDiv.prepend(individualImageDiv);
             }
     });
+});
+
+$(document).on("click",".gif", function() {
+    var state = $(this).attr("data-state");
+    if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+    }
 });
 
