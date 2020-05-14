@@ -41,43 +41,52 @@ function addButtons() {
 
 $(document).on("click",".gif-button", function(){
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&limit=10&q=";
+    
     team = $(this).attr("data-name");
-    console.log(team);
     queryURL = queryURL + team;
-    console.log(queryURL);
+    
+    var logoURL = "https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=";
+
+    logoURL = logoURL+team;
     $.ajax(
         {url: queryURL,
         method: "GET"}
         ).then(function(response) {
-            for (var i=0;i<11;i++) {
+            var teamImageDiv = $("<div>");
+            teamImageDiv.addClass("team-img-div");
+            for (var i=0;i<10;i++) {
+                
                 var individualImageDiv = $("<div>");
                 individualImageDiv.addClass("indiv-img-div");
 
                 individualImageDiv.append($("<img>").attr("src", response.data[i].images.fixed_width_still.url).attr("data-still",response.data[i].images.fixed_width_still.url).attr("data-animate",response.data[i].images.fixed_width.url).attr("data-state", "still").addClass("gif"));
 
                 individualImageDiv.append($("<p>").text("Rating: " +response.data[i].rating).addClass("rating"));
-                imageDiv.prepend(individualImageDiv);
-            }
+                teamImageDiv.append(individualImageDiv);
+            }; 
+            
+            $.ajax(
+                {url: logoURL,
+                method: "GET"}
+                ).then(function(response) {
+                    
+                        var individualImageDiv = $("<div>");
+                        individualImageDiv.addClass("logo-div");
+        
+                        individualImageDiv.append($("<img>").attr("src", response.teams[0].strTeamBadge).addClass("logo"));
+        
+                        console.log(response.teams[0].strTeamBadge)
+        
+                        individualImageDiv.append($("<h3>").text(team).addClass("team-text"));
+                        teamImageDiv.prepend(individualImageDiv);
+                        imageDiv.prepend(teamImageDiv);
+                    
+            });
     });
 
-    var logoURL = "https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t="+ team;
+    
 
-    $.ajax(
-        {url: logoURL,
-        method: "GET"}
-        ).then(function(response) {
-            
-                var individualImageDiv = $("<div>");
-                individualImageDiv.addClass("logo-div");
-
-                individualImageDiv.append($("<img>").attr("src", response.teams[0].strTeamBadge).addClass("logo"));
-
-                console.log(response.teams[0].strTeamBadge)
-
-                individualImageDiv.append($("<h3>").text(team).addClass("team-text"));
-                imageDiv.prepend(individualImageDiv);
-            
-    });
+    
 
 });
 
