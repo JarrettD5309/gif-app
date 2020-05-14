@@ -77,13 +77,11 @@ input {
 
 #gif-form {
     margin-top: 10px;
-    -webkit-appearance: none;
 }
 
 #gif-input {
     border: 2px solid black;
     width: 170px;
-    line-height: 5px;
 }
 
 #add-gif {
