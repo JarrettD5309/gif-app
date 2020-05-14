@@ -53,7 +53,7 @@ $(document).on("click",".gif-button", function(){
         method: "GET"}
         ).then(function(response) {
             var teamImageDiv = $("<div>");
-            teamImageDiv.addClass("team-img-div");
+            teamImageDiv.addClass("team-img-div col-12");
             for (var i=0;i<10;i++) {
                 
                 var individualImageDiv = $("<div>");
