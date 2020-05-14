@@ -59,6 +59,26 @@ $(document).on("click",".gif-button", function(){
                 imageDiv.prepend(individualImageDiv);
             }
     });
+
+    var logoURL = "https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t="+ team;
+
+    $.ajax(
+        {url: logoURL,
+        method: "GET"}
+        ).then(function(response) {
+            
+                var individualImageDiv = $("<div>");
+                individualImageDiv.addClass("logo-div");
+
+                individualImageDiv.append($("<img>").attr("src", response.teams[0].strTeamBadge).addClass("logo"));
+
+                console.log(response.teams[0].strTeamBadge)
+
+                individualImageDiv.append($("<h3>").text(team).addClass("team-text"));
+                imageDiv.prepend(individualImageDiv);
+            
+    });
+
 });
 
 $(document).on("click",".gif", function() {

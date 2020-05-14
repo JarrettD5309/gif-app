@@ -55,6 +55,16 @@
     cursor: pointer;
 }
 
+.logo {
+    max-width: 200px;
+}
+
+.logo-div {
+    margin: 5px;
+    display: block;
+    margin-top: 10px;
+}
+
 #gif-form {
     margin-top: 10px;
 }
