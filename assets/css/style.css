@@ -3,9 +3,11 @@
     box-shadow: none !important;
 }
 
-/* .outside-border {
-    border: 1px solid black;
-} */
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    }
 
 .indiv-img-div {
     display: inline-block;
