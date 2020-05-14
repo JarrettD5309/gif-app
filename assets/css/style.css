@@ -84,16 +84,41 @@
     border: 2px solid black;
     background-color: white;
     transition-duration: 0.2s;
+    -webkit-appearance: none;
 }
 
 #add-gif:hover {
     background-color: lightslategray;
     color: white;
-    border: 2px solid black;
 }
 
 #image-div {
     margin-top: 15px;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+
+    .gif-button {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .gif-button:hover {
+        background-color: white;
+        color:black;
+    }
+
+    #add-gif:hover {
+        background-color: white;
+        color: black
+    }
+
+    #image-row {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
 }
 
 
@@ -104,5 +129,6 @@
         max-width: 720px;
     }
 }
+
 
 

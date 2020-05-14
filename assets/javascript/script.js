@@ -1,4 +1,4 @@
-var topics = ["New York Yankees","Boston Red Sox","Chicago Cubs","Baltimore Orioles","Tampa Bay Rays"];
+var topics = ["New York Yankees","Boston Red Sox","Chicago Cubs","Arizona Diamondbacks","Philadelphia Phillies"];
 
 
 var buttonDiv = $("#button-div");
