@@ -74,6 +74,7 @@
 
 #gif-form {
     margin-top: 10px;
+    -webkit-appearance: none;
 }
 
 #gif-input {
