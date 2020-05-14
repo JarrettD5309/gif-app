@@ -83,14 +83,14 @@ input {
 #gif-input {
     border: 2px solid black;
     width: 170px;
-    height: 30px;
+    line-height: 25px;
 }
 
 #add-gif {
-    height: 30px;
     border: 2px solid black;
     background-color: white;
     transition-duration: 0.2s; 
+    line-height: 25px;
 }
 
 #add-gif:hover {
