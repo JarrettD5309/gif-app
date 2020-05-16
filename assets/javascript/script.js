@@ -103,8 +103,8 @@ $(document).on("click",".gif", function() {
 
 $("#add-gif").on("click", function() {
     event.preventDefault();
-    if ($("#gif-input").val()==="") {
-
+    if ($("#gif-input").val().trim()==="") {
+        $("#gif-input").val("");
     } else {
     
     var newTopic = $("#gif-input").val().trim();
